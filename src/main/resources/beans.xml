@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 直接注入 -->
+    <bean id="courseRepository" class="cn.maidaotech.java07.springtest.repository.impl.CourseRepositoryImpl"></bean>
+
+    <!-- 构造函数注入 -->
+    <!-- <bean id="courseService" class="cn.maidaotech.java07.springtest.service.impl.CourseServiceImpl">
+        <constructor-arg name="name" value="迈道科技"></constructor-arg>
+        <constructor-arg name="courseRepository" ref="courseRepository"></constructor-arg>
+    </bean> -->
+
+    <bean id="courseService" class="cn.maidaotech.java07.springtest.service.impl.CourseServiceImpl">
+        <property name="name" value="迈道科技"></property>
+        <property name="courseRepository" ref="courseRepository"></property>
+    </bean>
+</beans>
